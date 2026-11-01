@@ -1,0 +1,4 @@
+#!/bin/sh
+# Opens the editor window. Resolves its own directory so a symlink in ~/.local/bin works.
+d=$(dirname "$(readlink -f "$0")")
+exec quickshell -p "$d/ui/shell.qml"
