@@ -1,6 +1,6 @@
-# kraken-cooler
+# omarchy-kraken
 
-Edit NZXT Kraken Plus pump and fan settings on Linux without NZXT CAM:
+Edit NZXT Kraken Plus pump and fan settings on Linux without NZXT CAM (tested only on a Kraken Plus 360 V2):
 a CLI (`kraken-profile`) and a Quickshell window (`kraken-cooler`) for Omarchy.
 
 ## Use
@@ -38,3 +38,7 @@ Apply the active profile at login with a user service that runs `kraken-profile 
 ## AI disclosure
 
 Written with Claude Code, with a human setting the design and testing it on their own cooler.
+
+## License
+
+MIT, see `LICENSE`.
