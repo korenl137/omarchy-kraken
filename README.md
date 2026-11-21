@@ -16,10 +16,13 @@ a CLI (`kraken-profile`) and a Quickshell window (`kraken-cooler`) for Omarchy.
 
 Built-in profiles (`quiet`, `balanced`, `performance`, `max`) are read-only; edit one and save it under a new name.
 Custom profiles are `~/.config/kraken/profiles/NAME.toml`; the active name is in `~/.config/kraken/profile`.
+The [example profiles](docs/example-profiles.md) include a Windows CAM curve and its blend with a local tuning curve, with the source values and derivation.
 
 ## Limits
 
-- The fan curve follows **liquid** temperature, 20-59 C, on the device itself; no daemon runs.
+- The device follows the fan curve at **liquid** temperatures from 20 to 59°C.
+  The [liquidctl Kraken driver](https://github.com/liquidctl/liquidctl/blob/v1.16.0/liquidctl/driver/kraken3.py#L375-L385) sets fan duty to 100% at 59°C.
+  No daemon runs.
   The pump is a fixed duty, 20-100%.
 - Warnings (fan under 70% at liquid 45 C, pump under 40%) are arbitrary defaults, not vendor limits.
   Change them under `[warn]` in `~/.config/kraken/config.toml` (`fan_at_temp`, `fan_min`, `pump_min`).
